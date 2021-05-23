@@ -25,18 +25,34 @@
     </div>
   </nav>
   <div class="container">
-      <h1>수정페이지</h1>
-      <form action="{% url 'update' blog.id %}" method ='POST'>
-        {% csrf_token %}
-        <input type="text" name="title" value={{blog.title}}>
-        <br>
-        <br>
-        <h4>본문: </h4>
-        <textarea name="body" cols="40" rows="10">{{blog.body}}</textarea>
-        <br>
-        <br>
-        <input type="submit" value="제출하기">
-      </form>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col col-6" style="width: 720px;">
+        <div class="container" style="padding: 40px 0px;">
+          <h1 style="font-weight: 700;">수정하기</h2>
+        </div>
+        <div class="container">
+          <br>
+          <form action="{% url 'update' blog.id %}" method="POST">
+            {% csrf_token %}
+            <h4>제목</h4>
+            <textarea type="text" name="title" cols="88" rows="1">{{blog.title}}</textarea>
+            <br>
+            <br>
+            <h4>본문</h4>
+            <textarea name="body" cols="88" rows="15">{{blog.body}}</textarea>
+            <br>
+            <br>
+            <input type="submit" value="제출하기" class="btn btn-outline-secondary">
+          </form>
+          <footer style="padding: 100px 0 200px 0">
+            <hr>
+            <p style="color: grey;">Copyright ⓒ 신재우 All rights reserved.</p>
+          </footer>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
   </div>
 </body>
 </html>
