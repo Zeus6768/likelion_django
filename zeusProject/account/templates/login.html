@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col col-6" style="width: 720px;">
+            <div class="container" style="padding: 40px 0;">
+                <h1 style="font-weight: 700;">Log in</h1>
+            </div>
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <br>
+                <br>
+                {% if error %}
+                    <p>{{error}}</p>
+                    <br>
+                {% endif %}
+                <h4>Username</h4>
+                <input type="text" name="username">
+                <br>
+                <br>
+                <h4>Password</h4>
+                <input type="password" name="password">
+                <br>
+                <br>
+                <input type="submit" value="제출하기" class="btn btn-outline-secondary">
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+{% endblock %}
