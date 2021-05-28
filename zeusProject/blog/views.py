@@ -48,3 +48,6 @@ def update(request, blog_id):
 
 def aboutme(request):
     return render(request, 'aboutme.html')
+
+def mypage(request):
+    return render(request, 'mypage.html')
